@@ -1,53 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/component/colors.dart';
-import 'package:flutter_application_1/component/widgets/appbar.dart';
+import 'package:flutter_application_1/controller/bottom_navigation_controller.dart';
 import 'package:flutter_application_1/view/categories_screen.dart';
 import 'package:flutter_application_1/view/home_screen.dart';
 import 'package:flutter_application_1/view/notification_screen.dart';
 import 'package:flutter_application_1/view/profile_screen.dart';
 import 'package:flutter_application_1/view/saved_screen.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
-class MainHome extends StatefulWidget {
-  const MainHome({super.key});
+class BottomBarWidget extends StatelessWidget {
+  BottomBarWidget({super.key});
+  final BottomNavBarController controller = Get.put(BottomNavBarController());
 
-  @override
-  State<MainHome> createState() => _MainHomeState();
-}
-
-class _MainHomeState extends State<MainHome> {
-  late final List<Widget> pageList = [
-    const ProfileScreen(),
-    const SavedScreen(),
-    const NotificationScreen(),
-    const CategoriesScreen(),
+  final List<Widget> pages = [
     const HomeScreen(),
+    const CategoriesScreen(),
+    const NotificationScreen(),
+    const SavedScreen(),
+    const ProfileScreen(),
   ];
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: pageList.elementAt(_selectedIndex),
-        bottomNavigationBar: BottomNavigationBar(
+    return Scaffold(
+      body: Obx(() => pages[controller.currentIndex.value]),
+      bottomNavigationBar: Obx(
+        () => BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           showUnselectedLabels: true,
           fixedColor: SolidColor.maingreen,
-          onTap: _onItemTapped,
           unselectedItemColor: SolidColor.maingery,
-          currentIndex: _selectedIndex,
-          items: <BottomNavigationBarItem>[
+          currentIndex: controller.currentIndex.value,
+          onTap: controller.changePage,
+          items: [
             BottomNavigationBarItem(
               icon: SvgPicture.asset(
                 'assets/svg/G-icon.svg',
-                color: _selectedIndex == 0
+                color: controller.currentIndex.value == 0
                     ? SolidColor.maingreen
                     : SolidColor.maingery,
                 height: 24,
@@ -57,7 +47,7 @@ class _MainHomeState extends State<MainHome> {
             BottomNavigationBarItem(
               icon: SvgPicture.asset(
                 'assets/svg/gridview-icon.svg',
-                color: _selectedIndex == 1
+                color: controller.currentIndex.value == 1
                     ? SolidColor.maingreen
                     : SolidColor.maingery,
                 height: 24,
@@ -67,7 +57,7 @@ class _MainHomeState extends State<MainHome> {
             BottomNavigationBarItem(
               icon: SvgPicture.asset(
                 'assets/svg/bell-icon.svg',
-                color: _selectedIndex == 2
+                color: controller.currentIndex.value == 2
                     ? SolidColor.maingreen
                     : SolidColor.maingery,
                 height: 24,
@@ -77,7 +67,7 @@ class _MainHomeState extends State<MainHome> {
             BottomNavigationBarItem(
               icon: SvgPicture.asset(
                 'assets/svg/heart-icon.svg',
-                color: _selectedIndex == 3
+                color: controller.currentIndex.value == 3
                     ? SolidColor.maingreen
                     : SolidColor.maingery,
                 height: 24,
@@ -87,7 +77,7 @@ class _MainHomeState extends State<MainHome> {
             BottomNavigationBarItem(
               icon: SvgPicture.asset(
                 'assets/svg/account-icon.svg',
-                color: _selectedIndex == 4
+                color: controller.currentIndex.value == 4
                     ? SolidColor.maingreen
                     : SolidColor.maingery,
                 height: 24,
