@@ -18,7 +18,7 @@ class BottomBarWidget extends StatelessWidget {
     const CategoriesScreen(),
     const NotificationScreen(),
     const SavedScreen(),
-    const ProfileScreen(),
+    ProfileScreen(),
   ];
 
   @override

@@ -8,10 +8,8 @@ class NotificationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(50),
-        child: SimpleAppBar(
-          title: 'notif',
-        ),
+        preferredSize: const Size.fromHeight(60),
+        child: SimpleAppBar(title: 'Notifications'),
       ),
       body: const Center(
         child: Text('notification screen'),

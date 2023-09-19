@@ -34,7 +34,7 @@ class AppBarWidget extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
+          padding: const EdgeInsets.symmetric(vertical: 2),
           child: Container(
             color: Colors.grey,
             width: 1,
@@ -81,6 +81,7 @@ class SimpleAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      elevation: 0.5,
       backgroundColor: Colors.white,
       title: Text(
         title,
