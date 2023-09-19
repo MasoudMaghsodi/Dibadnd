@@ -11,8 +11,17 @@ class NotificationScreen extends StatelessWidget {
         preferredSize: const Size.fromHeight(60),
         child: SimpleAppBar(title: 'Notifications'),
       ),
-      body: const Center(
-        child: Text('notification screen'),
+      body: Container(
+        color: Colors.white,
+        child: ListTile(
+          leading: SizedBox(
+              height: 100,
+              width: 100,
+              child: Image.asset('assets/icon/logo.png')),
+          title: Text('Save Big on SiriusXM'),
+          subtitle:
+              Text('new enjoy 4 months of non-stop music hhhhhhhhhhhhhhh'),
+        ),
       ),
     );
   }
