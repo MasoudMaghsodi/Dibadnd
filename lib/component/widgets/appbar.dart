@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class AppBarWidget extends StatelessWidget {
   const AppBarWidget({super.key});
@@ -92,3 +93,90 @@ class SimpleAppBar extends StatelessWidget {
     );
   }
 }
+
+// class SliverAppBarWidget extends StatefulWidget {
+//   const SliverAppBarWidget({
+//     super.key,
+//   });
+
+//   @override
+//   State<SliverAppBarWidget> createState() => _SliverAppBarWidgetState();
+// }
+
+// class _SliverAppBarWidgetState extends State<SliverAppBarWidget> {
+//   bool _pinned = true;
+//   bool _snap = false;
+//   bool _floating = false;
+//   late final Widget child;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: CustomScrollView(
+//         slivers: <Widget>[
+//           SliverAppBar(
+//             pinned: _pinned,
+//             snap: _snap,
+//             floating: _floating,
+//             expandedHeight: 250,
+//             backgroundColor: Colors.white,
+//             leading: Icon(
+//               Icons.arrow_back,
+//               color: Colors.black,
+//             ),
+//             flexibleSpace: FlexibleSpaceBar(
+//               title: Text(
+//                 'SliverAppBar',
+//                 style: TextStyle(color: Colors.black),
+//               ),
+//               background: GestureDetector(
+//                 onTap: () {},
+//                 child: Image.asset('assets/icon/logo.png'),
+//               ),
+//             ),
+//             actions: [
+//               SvgPicture.asset(
+//                 'assets/svg/heart-icon.svg',
+//                 height: 20,
+//               ),
+//               SizedBox(
+//                 width: 10,
+//               ),
+//               Icon(
+//                 Icons.share,
+//                 color: Colors.black,
+//               ),
+//             ],
+//           ),
+//           SliverList(
+//             delegate: SliverChildBuilderDelegate(
+//               (BuildContext context, int index) {
+//                 return child;
+//               },
+//             ),
+//           ),
+//         ],
+//       ),
+//       bottomNavigationBar: BottomAppBar(
+//         child: OverflowBar(
+//           overflowAlignment: OverflowBarAlignment.center,
+//           children: <Widget>[
+//             Container(
+//               width: double.infinity,
+//               decoration: BoxDecoration(
+//                 border: Border.all(color: Colors.black26),
+//               ),
+//               child: Padding(
+//                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+//                 child: ElevatedButton(
+//                   onPressed: () {},
+//                   child: Text('Buy Now'),
+//                 ),
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }

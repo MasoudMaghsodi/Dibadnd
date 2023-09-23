@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/component/widgets/navbar.dart';
-import 'package:flutter_application_1/view/authentication/sign_in.dart';
-import 'package:flutter_application_1/view/authentication/sign_up.dart';
+import 'package:flutter_application_1/component/widgets/appbar.dart';
+import 'package:flutter_application_1/view/product_card_detail.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() {
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SignInScreen(),
+      home: ProductDetail(),
     );
   }
 }

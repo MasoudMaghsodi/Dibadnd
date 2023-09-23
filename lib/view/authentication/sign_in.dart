@@ -58,26 +58,28 @@ class _SignInScreenState extends State<SignInScreen> {
                 SizedBox(
                   height: 25.0,
                 ),
-                RichText(
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                        text: 'By clicking an option below, I agree to the ',
-                        style: TextStyle(color: Colors.black),
-                      ),
-                      TextSpan(
-                        text: 'Terms of Use ',
-                        style: TextStyle(color: Colors.blue),
-                      ),
-                      TextSpan(
-                        text: 'and\nhave red the ',
-                        style: TextStyle(color: Colors.black),
-                      ),
-                      TextSpan(
-                        text: 'Privacy Statement',
-                        style: TextStyle(color: Colors.blue),
-                      ),
-                    ],
+                Container(
+                  child: RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'By clicking an option below, I agree to the ',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        TextSpan(
+                          text: 'Terms of Use ',
+                          style: TextStyle(color: Colors.blue),
+                        ),
+                        TextSpan(
+                          text: 'and have red the ',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        TextSpan(
+                          text: 'Privacy Statement',
+                          style: TextStyle(color: Colors.blue),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(
