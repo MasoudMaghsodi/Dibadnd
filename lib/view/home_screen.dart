@@ -16,7 +16,16 @@ class HomeScreen extends StatelessWidget {
         body: ListView.builder(
           itemCount: 10,
           itemBuilder: (context, index) {
-            return ProductCardWidget();
+            return ProductCardWidget(
+              image: Image.asset('assets/icon/logo.png'),
+              title: 'Bird Kingdom',
+              address: '5651 River Road,Nigara Falls',
+              ratings: 1268,
+              originalPrice: 18.02,
+              discount: 16,
+              discountPercent: 11,
+              description: '11% Off - Single-Day Admission for One Child(Ages 3-15)',
+            );
           },
         ),
       ),
