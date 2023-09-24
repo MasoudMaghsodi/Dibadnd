@@ -1,5 +1,5 @@
+import 'package:Dibadnd/component/widgets/navbar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/component/widgets/navbar.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() {

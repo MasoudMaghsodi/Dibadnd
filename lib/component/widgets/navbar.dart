@@ -1,11 +1,12 @@
+import 'package:Dibadnd/component/colors.dart';
+import 'package:Dibadnd/controller/bottom_navigation_controller.dart';
+import 'package:Dibadnd/view/categories_screen.dart';
+import 'package:Dibadnd/view/home_screen.dart';
+import 'package:Dibadnd/view/notification_screen.dart';
+import 'package:Dibadnd/view/profile_screen.dart';
+import 'package:Dibadnd/view/saved_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/component/colors.dart';
-import 'package:flutter_application_1/controller/bottom_navigation_controller.dart';
-import 'package:flutter_application_1/view/categories_screen.dart';
-import 'package:flutter_application_1/view/home_screen.dart';
-import 'package:flutter_application_1/view/notification_screen.dart';
-import 'package:flutter_application_1/view/profile_screen.dart';
-import 'package:flutter_application_1/view/saved_screen.dart';
+
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
@@ -36,7 +37,7 @@ class BottomBarWidget extends StatelessWidget {
           items: [
             BottomNavigationBarItem(
               icon: SvgPicture.asset(
-                'assets/svg/G-icon.svg',
+                'assets/svg/D-icon.svg',
                 color: controller.currentIndex.value == 0
                     ? SolidColor.maingreen
                     : SolidColor.maingery,

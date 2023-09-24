@@ -1,5 +1,5 @@
+import 'package:Dibadnd/component/widgets/appbar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/component/widgets/appbar.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});
