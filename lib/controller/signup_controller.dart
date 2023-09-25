@@ -1,6 +1,6 @@
+import 'package:Dibadnd/component/api_constant.dart';
+import 'package:Dibadnd/services/dio_service.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/component/api_constant.dart';
-import 'package:flutter_application_1/services/dio_service.dart';
 import 'package:get/state_manager.dart';
 
 class SignUpController extends GetxController {
