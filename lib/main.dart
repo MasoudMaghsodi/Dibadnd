@@ -1,4 +1,5 @@
 import 'package:Dibadnd/component/widgets/navbar.dart';
+import 'package:Dibadnd/view/categories_product.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BottomBarWidget(),
+      home: CategoriesProductScreen(),
     );
   }
 }
