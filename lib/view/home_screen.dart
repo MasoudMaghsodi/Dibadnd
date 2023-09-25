@@ -1,6 +1,6 @@
+import 'package:Dibadnd/component/widgets/appbar.dart';
+import 'package:Dibadnd/component/widgets/product_card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/component/widgets/appbar.dart';
-import 'package:flutter_application_1/component/widgets/product_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

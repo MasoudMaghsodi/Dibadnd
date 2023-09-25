@@ -1,7 +1,6 @@
+import 'package:Dibadnd/component/widgets/appbar.dart';
+import 'package:Dibadnd/component/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter_application_1/component/widgets/appbar.dart';
-import 'package:flutter_application_1/component/widgets/custom_button.dart';
 
 class ProfileScreen extends StatelessWidget {
   ProfileScreen({Key? key});
