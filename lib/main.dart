@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/view/authentication/sign_up.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:flutter_application_1/component/widgets/navbar.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
-void main() {
+Future<void> main() async {
+  await GetStorage.init();
   runApp(const MyApp());
 }
 
