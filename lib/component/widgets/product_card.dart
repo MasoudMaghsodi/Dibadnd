@@ -2,7 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class ProductCardWidget extends StatelessWidget {
-  const ProductCardWidget({super.key});
+  const ProductCardWidget({
+    super.key,
+    required this.image,
+    required this.title,
+    required this.originalPrice,
+    required this.discount,
+    required this.discountPercent,
+    required this.description,
+    this.address,
+    this.ratings,
+  });
+  final Image image;
+  final String title;
+  final String? address;
+  final int? ratings;
+  final double originalPrice;
+  final double discount;
+  final int discountPercent;
+  final String description;
 
   @override
   Widget build(BuildContext context) {
@@ -17,15 +35,15 @@ class ProductCardWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset('assets/icon/logo.png'),
+              image,
               SizedBox(
                 height: 15,
               ),
               Text(
-                'Bird Kingdom',
+                title,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
-              Text('5651 River Road,Nigara Falls'),
+              Text(address!),
               Row(
                 children: [
                   Text('4.5 '),
@@ -45,13 +63,13 @@ class ProductCardWidget extends StatelessWidget {
                       print(rating);
                     },
                   ),
-                  Text(' 16,012 Rating'),
+                  Text(' ${ratings} Rating'),
                 ],
               ),
               Row(
                 children: [
                   Text(
-                    '\$18.02',
+                    '\$${originalPrice}',
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: 20,
@@ -62,7 +80,7 @@ class ProductCardWidget extends StatelessWidget {
                     width: 5,
                   ),
                   Text(
-                    '\$16',
+                    '\$${discount}',
                     style: TextStyle(
                         color: Colors.green,
                         fontWeight: FontWeight.w600,
@@ -74,7 +92,7 @@ class ProductCardWidget extends StatelessWidget {
                   Container(
                     color: Colors.lightGreenAccent.shade200,
                     child: Text(
-                      '11% Off',
+                      '${discountPercent}% Off',
                       style: TextStyle(
                           color: Colors.green.shade700,
                           fontWeight: FontWeight.w600,
@@ -83,7 +101,7 @@ class ProductCardWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              Text('11% Off - Single-Day Admission for One Child(Ages 3-15)')
+              Text('${description}')
             ],
           ),
         ),

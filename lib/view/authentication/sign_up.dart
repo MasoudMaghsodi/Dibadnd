@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/controller/signup_controller.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -10,6 +12,8 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   bool isChecked = false;
+  SignUpController signUpController = Get.put(SignUpController());
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -38,18 +42,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 InfoTextField(
                   text: 'Full Name',
+                  controller: signUpController.nameControler,
                 ),
                 SizedBox(
                   height: 25.0,
                 ),
                 InfoTextField(
                   text: 'Email Address',
+                  controller: signUpController.emailController,
                 ),
                 SizedBox(
                   height: 25.0,
                 ),
                 InfoTextField(
                   text: 'Password',
+                  controller: signUpController.passwordControler,
                   icon: Icon(Icons.remove_red_eye),
                 ),
                 SizedBox(
@@ -116,7 +123,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 SizedBox(
                   width: MediaQuery.of(context).size.width / 1.05,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      signUpController.signup();
+                    },
                     child: Text('Sign up with groupon'),
                   ),
                 ),
@@ -187,9 +196,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
 }
 
 class InfoTextField extends StatelessWidget {
-  const InfoTextField({super.key, required this.text, this.icon});
+  const InfoTextField(
+      {super.key, required this.text, this.icon, required this.controller});
   final String text;
   final Widget? icon;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -210,6 +221,7 @@ class InfoTextField extends StatelessWidget {
             borderRadius: BorderRadius.circular(5),
           ),
           child: TextField(
+            controller: controller,
             decoration: InputDecoration(
               border: InputBorder.none,
               suffixIcon: icon,
