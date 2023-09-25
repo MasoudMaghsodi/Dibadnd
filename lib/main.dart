@@ -1,11 +1,6 @@
 import 'package:Dibadnd/component/widgets/navbar.dart';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-=======
-import 'package:flutter_application_1/view/authentication/sign_up.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:flutter_application_1/component/widgets/navbar.dart';
->>>>>>> main
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 Future<void> main() async {

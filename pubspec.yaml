@@ -41,12 +41,9 @@ dependencies:
   flutter_launcher_icons: ^0.13.1
   flutter_svg: ^2.0.7
   flutter_rating_bar: ^4.0.1
-<<<<<<< HEAD
   flutter_native_splash: ^2.3.2
-
-=======
   get_storage: ^2.1.1
->>>>>>> main
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
